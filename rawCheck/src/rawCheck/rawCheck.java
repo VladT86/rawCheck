@@ -26,7 +26,7 @@ public class rawCheck {
 		
 	}
 	
-	 private static void print(Metadata metadata)
+//	 private static void print(Metadata metadata)
 
 	    {
 	        System.out.println("-------------------------------------");

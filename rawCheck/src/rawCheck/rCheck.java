@@ -11,16 +11,17 @@ import java.util.Map.Entry;
 public class rCheck {
 	
 	private static ArrayList<photo> photos = new ArrayList<photo>();
+	private static String exportPath;
 
 	public static void main(String[] args) {
-		//String a = "D:/Users/Phr/workspace/rawCheck/bin/rawCheck";
-//		String a = "C:/Users/Phr/Desktop/raw/";
-		String a = "F:/poze/";
+
+		//String a = "J:/poze/";
+		String a = args[0];
+		exportPath = args[1];
 		ArrayList<File> fileList = new ArrayList<File>();
 		getAllFiles(a,fileList);
 		
-		
-		
+
 		try {
 			for (File f:fileList){
 				{
@@ -61,7 +62,7 @@ public class rCheck {
 	
 	private static void printLensType(ArrayList<photo> photos){
 		try{
-			PrintWriter writer = new PrintWriter("C:/Users/Phr/Desktop/a/lensUsed.json","UTF-8");
+			PrintWriter writer = new PrintWriter(exportPath + "/lensUsed.json","UTF-8");
 			HashMap<String, Integer> lenstype = new HashMap<String,Integer>();
 			
 			writer.println("{");
@@ -104,7 +105,7 @@ public class rCheck {
 	
 	private static void printFocalLength(ArrayList<photo> photos){
 		try {
-			PrintWriter writer = new PrintWriter("C:/Users/Phr/Desktop/a/FocalLength.json","UTF-8");
+			PrintWriter writer = new PrintWriter(exportPath + "/FocalLength.json","UTF-8");
 
 			HashMap<Integer, Integer> focalLength = new HashMap<Integer,Integer>();
 			for (photo p:photos){
@@ -151,7 +152,7 @@ public class rCheck {
 	
 	private static void printISO(ArrayList<photo> photos){
 		try{
-			PrintWriter writer = new PrintWriter("C:/Users/Phr/Desktop/a/iso.json","UTF-8");
+			PrintWriter writer = new PrintWriter(exportPath + "/iso.json","UTF-8");
 			HashMap<Integer, Integer> iso = new HashMap<Integer,Integer>();
 			
 			writer.println("{");
@@ -198,7 +199,7 @@ public class rCheck {
 
 	private static void printExpProgram(ArrayList<photo> photos){
 		try{
-			PrintWriter writer = new PrintWriter("C:/Users/Phr/Desktop/a/expType.json","UTF-8");
+			PrintWriter writer = new PrintWriter(exportPath + "/expType.json","UTF-8");
 			HashMap<String, Integer> expType = new HashMap<String,Integer>();
 			
 			writer.println("{");
@@ -238,7 +239,7 @@ public class rCheck {
 	
 	private static void printMetering(ArrayList<photo> photos){
 		try{
-			PrintWriter writer = new PrintWriter("C:/Users/Phr/Desktop/a/metering.json","UTF-8");
+			PrintWriter writer = new PrintWriter(exportPath + "/metering.json","UTF-8");
 			HashMap<String, Integer> Metering = new HashMap<String,Integer>();
 			
 			writer.println("{");
@@ -278,7 +279,7 @@ public class rCheck {
 	
 	private static void printExpTime(ArrayList<photo> photos){
 		try{
-			PrintWriter writer = new PrintWriter("C:/Users/Phr/Desktop/a/time.json","UTF-8");
+			PrintWriter writer = new PrintWriter(exportPath + "/time.json","UTF-8");
 			HashMap<Double, Integer> expTime = new HashMap<Double,Integer>();
 			
 			writer.println("{");
