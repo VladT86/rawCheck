@@ -1,3 +1,9 @@
+//args[0] = picture folder
+//args[1] = json export folder
+//args[2] = ftp address  	files.000webhost.com
+//args[3] = ftp user rawcheck
+//args[4] = ftp pass f
+
 package rawCheck;
 
 import java.io.File;
@@ -15,7 +21,6 @@ public class rCheck {
 
 	public static void main(String[] args) {
 
-		//String a = "J:/poze/";
 		String a = args[0];
 		exportPath = args[1];
 		ArrayList<File> fileList = new ArrayList<File>();
@@ -41,6 +46,9 @@ public class rCheck {
 		printExpProgram(photos);
 		printMetering(photos);
 		printExpTime(photos);
+		
+		ftpUpload ftp = new ftpUpload(args[2],args[3],args[4]);
+		ftp.upload(args[1]);
 	}
 	
 	private static void getAllFiles(String directoryName, ArrayList<File> files){

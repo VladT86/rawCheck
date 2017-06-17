@@ -26,32 +26,15 @@ public class rawCheck {
 		
 	}
 	
-//	 private static void print(Metadata metadata)
-
+	private static void print(Metadata metadata)
 	    {
 	        System.out.println("-------------------------------------");
-
-	        // Iterate over the data and print to System.out
-
-	        //
-	        // A Metadata object contains multiple Directory objects
-	        //
 	        try {
 	        	PrintWriter writer = new PrintWriter(file.getParent().toString() +"/" + file.getName().toString() + ".txt","UTF-8");
 		        for (Directory directory : metadata.getDirectories()) {
-	
-		            //
-		            // Each Directory stores values in Tag objects
-		            //
-		        		
 		        		for (Tag tag : directory.getTags()) {
-			                //System.out.println(tag);
 		        			writer.println(tag);
 			            }
-
-		            //
-		            // Each Directory may also contain error messages
-		            //
 		            if (directory.hasErrors()) {
 		                for (String error : directory.getErrors()) {
 		                    System.err.println("ERROR: " + error);
