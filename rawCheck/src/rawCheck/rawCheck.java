@@ -13,6 +13,7 @@ public class rawCheck {
 	private static File file;
 	private Metadata metadata;
 	
+	
 	public rawCheck(File file)
 	{
 		rawCheck.file = file;

@@ -14,6 +14,7 @@ public class ftpUpload{
 	private String user;
 	private String pass;
 	private ArrayList<File> files = new ArrayList<File>();
+
 	
 	public ftpUpload(String ftp, String user, String pass) {
 		this.ftp = ftp;
